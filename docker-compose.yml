@@ -1,0 +1,8 @@
+services:
+  ovh-vps-watcher:
+    build: .
+    restart: unless-stopped
+    environment:
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+      - CHECK_INTERVAL_SECONDS=${CHECK_INTERVAL_SECONDS:-60}
+      - MODELS=${MODELS:-2,3,4}
